@@ -30,6 +30,7 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
+        run: pip install django.core
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
