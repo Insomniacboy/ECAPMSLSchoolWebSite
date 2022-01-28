@@ -61,4 +61,4 @@ jobs:
         with:
           app-name: 'ecapmsl'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DF496183A2024BF8A93AF7DFA61E8181 }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE}}
