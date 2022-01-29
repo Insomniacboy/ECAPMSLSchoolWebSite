@@ -25,14 +25,8 @@ jobs:
       - name: checkout the code
         uses: actions/checkout@v2
 
-      - name: login
-        uses: azure/docker-login@v1
-        with:
-          login-server: $REGISTRY
-          username: ecapmsl
-          password: weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi 
-
       - name: build and push
         run: |
+          docker login $REGISTRY --username ecapmsl --pasword weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
           docker build . -t $IMAGE_NAME
           docker push $IMAGE_NAME
