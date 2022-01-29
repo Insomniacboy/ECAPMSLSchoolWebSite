@@ -21,13 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: log in to azurer container registry
-        run: docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
-
-      - name: build docker image
-        run: docker build -t $IMAGE_NAME . 
-      
-      - name: push to the container registry
-        run: docker push $IMAGE_NAME
+      - name: log in to azure and push the build
+        run: |
+        docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
+        docker build -t $IMAGE_NAME . 
+        docker push $IMAGE_NAME
 
     
