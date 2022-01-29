@@ -1,4 +1,10 @@
 .vscode
+<<<<<<< HEAD
 */__pycache__/
 .azure
 .venv
+=======
+.azure
+.venv
+*/__pycache__/
+>>>>>>> bakcend-murat-patch
