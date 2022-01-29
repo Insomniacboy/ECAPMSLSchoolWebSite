@@ -24,14 +24,11 @@ jobs:
       - name: log in to azurer container registry
         run: docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
 
-      - name: build docker image
-        run: |
-          cd $GITHUB_WORKSPACE
-          docker build -t $IMAGE_NAME . 
-      
-      - name: push to the container registry
-        run: |
-          cd $GITHUB_WORKSPACE
-          docker push $IMAGE_NAME
 
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: $IMAGE_NAME
     
