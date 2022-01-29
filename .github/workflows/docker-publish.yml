@@ -23,8 +23,8 @@ jobs:
     steps:
       - name: log in to azure and push the build
         run: |
-        docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
-        docker build -t $IMAGE_NAME . 
-        docker push $IMAGE_NAME
+          docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
+          docker build -t $IMAGE_NAME . 
+          docker push $IMAGE_NAME
 
     
