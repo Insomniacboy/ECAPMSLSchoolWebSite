@@ -1,0 +1,34 @@
+name: Docker
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  push:
+    branches: [ backend-murat-patch ]
+    # Publish semver tags as releases.
+  pull_request:
+    branches: [ backend ]
+
+env:
+  REGISTRY: ecapmsl.azurecr.io
+  IMAGE_NAME: ecapmsl.azurecr.io/ecapmsl-docker:latest
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: log in to azurer container registry
+        run: docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
+
+      - name: build docker image
+        run: docker build -t $IMAGE_NAME
+      
+      - name: push to the container registry
+        run: docker push $IMAGE_NAME
+
+    
