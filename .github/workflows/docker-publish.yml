@@ -31,5 +31,6 @@ jobs:
 
       - name: build and push
         run: |
+          cd ..
           docker build . -t $IMAGE_NAME
           docker push $IMAGE_NAME
