@@ -25,7 +25,7 @@ jobs:
         run: docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
 
       - name: build docker image
-        run: docker build -t $IMAGE_NAME
+        run: docker build -t $IMAGE_NAME . 
       
       - name: push to the container registry
         run: docker push $IMAGE_NAME
