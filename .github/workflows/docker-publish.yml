@@ -30,7 +30,7 @@ jobs:
           password: weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi 
 
       - name: build and push
+        uses: actions/checkout@v2
         run: |
-          cd ..
           docker build . -t $IMAGE_NAME
           docker push $IMAGE_NAME
