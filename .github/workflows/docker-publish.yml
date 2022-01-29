@@ -7,10 +7,10 @@ name: Docker
 
 on:
   push:
-    branches: [ backend-murat-patch ]
-    # Publish semver tags as releases.
-  pull_request:
-    branches: [ backend ]
+  push:
+    branches:
+      - muratsat-patch-1
+  workflow_dispatch:
 
 env:
   REGISTRY: ecapmsl.azurecr.io
