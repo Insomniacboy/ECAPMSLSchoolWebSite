@@ -27,6 +27,6 @@ jobs:
 
       - name: build and push
         run: |
-          docker login $REGISTRY --username ecapmsl --pasword weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
+          docker login $REGISTRY --username ecapmsl --password weMrlZpCb9VNSeJU=oEKvwlkTg9a8Esi
           docker build . -t $IMAGE_NAME
           docker push $IMAGE_NAME
