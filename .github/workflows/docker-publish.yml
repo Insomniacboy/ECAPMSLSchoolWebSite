@@ -26,10 +26,12 @@ jobs:
 
       - name: build docker image
         run: |
-          ls
+          cd app
           docker build -t $IMAGE_NAME . 
       
       - name: push to the container registry
-        run: docker push $IMAGE_NAME
+        run: |
+          cd app
+          docker push $IMAGE_NAME
 
     
