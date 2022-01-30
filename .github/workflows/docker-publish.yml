@@ -29,6 +29,7 @@ jobs:
       
       - name: build and push
         run: |
+          docker login $REGISTRY --username ${{ secrets.REGISTRY_USERNAME }} --password ${{ secrets.REGISTRY_PASSWORD }}
           docker build . -t $IMAGE_NAME
           docker push $IMAGE_NAME
 
