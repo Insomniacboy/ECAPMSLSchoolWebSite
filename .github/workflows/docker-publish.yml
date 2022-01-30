@@ -9,7 +9,6 @@ on:
 env:
   REGISTRY: ecapmsl.azurecr.io
   IMAGE_NAME: ecapmsl.azurecr.io/ecapmsl-docker:latest
-  APP_NAME: ecapmsl-docker
 
 jobs:
   build:
@@ -36,6 +35,6 @@ jobs:
       - name: deploy to azure
         uses: azure/webapps-deploy@v2
         with:
-          app-name: $APP_NAME
+          app-name: 'ecapmsl-docker'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: $IMAGE_NAME
+          images: {{ env.IMAGE_NAME}}
