@@ -29,7 +29,8 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     '127.0.0.1',
     'localhost',
-    'ecapmsl-docker.azurewebsites.net'
+    'ecapmsl-docker.azurewebsites.net',
+    'ecapmsl.azurewebsites.net'
 ]
 
 

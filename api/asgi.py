@@ -8,7 +8,6 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/
 """
 
 import os
-# hello
 
 from django.core.asgi import get_asgi_application
 
